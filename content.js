@@ -306,12 +306,15 @@
       const item = document.createElement("div");
       item.className = "gn-item";
 
-      item.innerHTML =
-        '<span class="gn-label">' +
-        (idx + 1) + ". " +
-        escapeHtml(msg.preview) +
-        "</span>" +
-        '<span class="gn-dot"></span>';
+      const label = document.createElement("span");
+      label.className = "gn-label";
+      label.textContent = (idx + 1) + ". " + msg.preview;
+
+      const dot = document.createElement("span");
+      dot.className = "gn-dot";
+
+      item.appendChild(label);
+      item.appendChild(dot);
 
       item.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -337,12 +340,6 @@
         listEl.classList.remove("has-many");
       }
     });
-  }
-
-  function escapeHtml(s) {
-    const d = document.createElement("div");
-    d.textContent = s;
-    return d.innerHTML;
   }
 
   // ========== Scroll to message ==========
