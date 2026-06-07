@@ -19,7 +19,8 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "gemini-navigator@example.com",
-      "strict_min_version": "57.0"
+      "strict_min_version": "57.0",
+      "data_collection_permissions": []
     }
   }
 }
